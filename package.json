@@ -1,0 +1,38 @@
+{
+  "name": "project-notto",
+  "version": "1.0.0",
+  "description": "A mini project :v",
+  "private": "true",
+  "main": "app.js",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "^4.15.4",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "morgan": "^1.8.2",
+    "nib": "^1.1.2",
+    "passport": "*",
+    "passport-jwt": "*",
+    "pug": "^2.0.0-rc.3",
+    "stylus": "^0.54.5",
+    "@angular/cli": "1.0.0",
+    "@angular/compiler-cli": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctrlnot/Project-Notto.git"
+  },
+  "author": "ctrlnot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctrlnot/Project-Notto/issues"
+  },
+  "homepage": "https://github.com/ctrlnot/Project-Notto#readme"
+}
