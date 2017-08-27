@@ -23,7 +23,6 @@ router.post('/signup', (req, res, next) => {
       res.json({success: false, msg: "Registration failed..."});
     } else {
       res.json({success: true, msg: "User registered!"});
-
     }
   });
 });

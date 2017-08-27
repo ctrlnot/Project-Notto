@@ -35,7 +35,7 @@ app.use(cors());
 // app.set('view engine', 'pug');
 // app.use(logger('dev'));
 // app.use(stylus.middleware({src: __dirname + '/public', compile: compile}));
-app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Compress stylus
 // function compile(str, path) {
