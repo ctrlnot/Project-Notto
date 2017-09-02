@@ -34,10 +34,13 @@ router.post('/login', (req, res, next) => {
 
   User.getUserByUsername(username, (err, user) => {
     if(err) throw err;
-    if(!user) res.json({success: false, msg: "Invalid login!"});
+    if(!user) {
+      res.json({success: false, msg: "Invalid username login!"});
+      return false;
+    }
 
     User.comparePassword(password, user.password, (err, isMatch) => {
-      if(err) throw err;
+      // if(err) throw err;
 
       if(isMatch) {
         const token = jwt.sign(user, config.secret, {
