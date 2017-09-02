@@ -5,12 +5,7 @@ const express = require('express'),
 
 const User = require('../models/user'),
       config = require('../config/database');
-
-// Home Page
-router.get('/', (req, res, next) => {
-  res.send('Home');
-});
-
+      
 // Signup Page
 router.post('/signup', (req, res, next) => {
   let newUser = new User({
@@ -64,7 +59,6 @@ router.post('/login', (req, res, next) => {
 
 // Profile Page
 router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res, next) => {
-  // res.send('Profile!');
   res.json({user: req.user});
 });
 

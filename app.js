@@ -31,16 +31,7 @@ const users = require('./routes/users');
 app.use(cors());
 
 // Static folder
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'pug');
-// app.use(logger('dev'));
-// app.use(stylus.middleware({src: __dirname + '/public', compile: compile}));
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Compress stylus
-// function compile(str, path) {
-//   return stylus(str).set('filename', path).use(nib());
-// }
 
 // Body parser MW
 app.use(bodyParser.json());
@@ -52,7 +43,12 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 // Index route
-app.use('/', users);
+app.use('/users', users);
+
+// Other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 // Start server
 app.listen(port, () => {
