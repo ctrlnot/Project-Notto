@@ -26,6 +26,7 @@ mongoose.connection.on('error', (err) => {
 const port = 3003;
 const app = express();
 const users = require('./routes/users');
+const members = require('./routes/members');
 
 // Cors MW
 app.use(cors());
@@ -44,6 +45,9 @@ require('./config/passport')(passport);
 
 // Index route
 app.use('/users', users);
+
+// Members route
+app.use('/members', members);
 
 // Other routes
 app.get('*', (req, res) => {

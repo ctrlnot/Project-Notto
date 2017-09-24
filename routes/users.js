@@ -30,7 +30,7 @@ router.post('/login', (req, res, next) => {
   User.getUserByUsername(username, (err, user) => {
     if(err) throw err;
     if(!user) {
-      res.json({success: false, msg: "Invalid username login!"});
+      res.json({success: false, msg: "Invalid username or password!"});
       return false;
     }
 
@@ -55,11 +55,6 @@ router.post('/login', (req, res, next) => {
       }
     });
   });
-});
-
-// Profile Page
-router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res, next) => {
-  res.json({user: req.user});
 });
 
 module.exports = router;

@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     }
 
     if(!this.validateService.validateLogin(user)) {
-      this.flashMessage.show('Invalid login 2!', {cssClass: 'alert-danger', timeout: 3000});
+      this.flashMessage.show('Your username or password is incorrect!', {cssClass: 'alert-danger', timeout: 3000});
       return false;
     }
 
